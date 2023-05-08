@@ -15,6 +15,8 @@ from src.lake_modelling.utils.user_inputs import (
 
 from src.lake_modelling.utils.plot import plot_result
 
+st.set_option("deprecation.showPyplotGlobalUse", False)
+
 LIME_PRODUCTS_DATA = "data/lime_products.xlsx"
 
 
@@ -35,7 +37,6 @@ def app():
 
     model = Model(lake, prod, dose, lime_month, spr_meth, F_sol, K_L, n_months)
 
-    st.set_option("deprecation.showPyplotGlobalUse", False)
     st.pyplot(fig=model.plot_result())
 
     return None
